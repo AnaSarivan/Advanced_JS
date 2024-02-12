@@ -1,0 +1,31 @@
+<script>
+let car = {
+    make: "bmw",
+    model: "45h3e",
+    year: "2010",
+    getPrice: function() {
+        // performe some calc
+        return 5000;
+    },
+    printDescription: function() {
+        console.log(this.make + ' ' + this.model);
+    }
+}
+
+car.printDescription();
+console.log(car.year);
+
+//////////////////////////////////
+
+let carLot = [
+    {year: 2017, make: "Toyota", model: "4runner"},
+    {year: 2015, make: "BMW", model: "521i"},
+    {year: 2020, make: "Toyota", model: "Rav4"}
+]
+
+for (let i = 0; i < carLot.length; i++) {
+    const car = carLot[i];   
+    console.log(car);        
+    
+}
+</script>
