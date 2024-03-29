@@ -1,0 +1,23 @@
+<script type="module">
+  import { faker } from "https://esm.sh/@faker-js/faker";
+
+  // Caitlyn Kerluke
+  /* const getRandomName = () => {
+    const name = faker.person.fullName();
+    const initials = name.split(" ").map((n) => {return `${n[0]}.`})
+    const html = `<h2>${initials.join("")}</h2>`    
+    return html
+  } */
+
+  // sthe same function using chaining
+  const getRandomName = () => "<h2>" + faker.person
+            .fullName()
+            .split(" ")
+            .map((n) => { return `${n[0]}.`; })
+            .join("") + 
+        "</h2>"
+
+  for (let i = 0; i < 5; i++) {
+    console.log(getRandomName());
+  }
+</script>
