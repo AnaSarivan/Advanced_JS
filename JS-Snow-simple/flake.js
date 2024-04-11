@@ -11,6 +11,7 @@ class Flake {
         console.info(`FLAKE ${this.n}: APPEARED`)
     }
 
+
     // falling phase
     fall(cw, ch, cb ) {
         this.timerId = setInterval(() => {

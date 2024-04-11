@@ -9,3 +9,4 @@ function randDelay(delay) {
 function randFloat(value) {
     return value * Math.random()
 }
+
