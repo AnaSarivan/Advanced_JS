@@ -3,7 +3,12 @@ class Task {
     constructor(title, deadline) {
         this.title = title
         this.deadline = deadline
+        this.done = false
         this.assignee = null // reference to an User{} object 
+    }
+
+    markAsDone() {
+        this.done = true
     }
 }
 
@@ -23,16 +28,23 @@ class User {
             console.error( "Only objects of type Task can be assigned!")
         }
     }
+
+    allDoneTasks() {
+        return this.tasks.filter(task => task.done)
+    }
 }
 
 //give 2 tasks to a user
 let userDev = new User ("John Davis", "developer")
 
-let taskProj1 = new Task ("Finish project 1", "01-07-2024", userDev)
-let taskProj2 = new Task ("Finish project 2", "01-08-2024", userDev)
+let taskProj1 = new Task ("Finish project 1", "01-07-2024")
+let taskProj2 = new Task ("Finish project 2", "01-08-2024")
+let taskProj3 = new Task ("Finish project 3", "01-09-2024")
 
 userDev.assignTask(taskProj1)
 userDev.assignTask(taskProj2)
+userDev.assignTask(taskProj3)
+
 
 /* 
 
