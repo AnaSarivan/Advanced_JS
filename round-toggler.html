@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROUND TOGGLER</title>
+    <style>
+      body {
+        margin: 10em;
+      }
+
+      button {
+        font-size: 5em;
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <button></button>
+
+    <script>
+      // 1. access the button element ?
+      /*  let btn = document
+                       .firstElementChild
+                       .lastElementChild
+                       .firstElementChild
+
+                       console.log("found button", btn ) */
+
+      /*   let btn1 = document.querySelector("button")
+       console.log("found button", btn1 )
+
+       btn1.addEventListener('click', () => {
+        let cStyle = getComputedStyle(btn1)
+        let height = parseInt(cStyle.height)
+        height *= 1.5
+        btn1.style.height = `${height}px`
+        btn1.style.width = `${height}px`
+        //console.log(cStyle.height)
+       }) */
+
+      let btn1 = document.querySelector("button");
+      let clickCount = 0;
+
+      btn1.addEventListener("click", () => {
+        let cStyle = getComputedStyle(btn1);
+        let height = parseInt(cStyle.height);
+
+        if (clickCount < 2) {
+          height *= 1.5;
+          btn1.style.height = `${height}px`;
+          btn1.style.width = `${height}px`;
+          clickCount++;
+        } else {
+          // Reset height and width
+          btn1.style.height = ""; // Resets to default
+          btn1.style.width = ""; // Resets to default
+          clickCount = 0; // Reset click count
+        }
+      });
+    </script>
+  </body>
+</html>
